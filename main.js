@@ -18,8 +18,6 @@ app.get("/kiss/images", authMiddleware, (req, res) => {
   const { kissJSON } = require("./service/images.json");
   let randomGif = kissJSON[Math.floor(Math.random() * kissJSON.length)];
 
-  console.log(kissJSON);
-  console.log(randomGif);
   res.json(randomGif);
 });
 
