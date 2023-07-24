@@ -40,10 +40,6 @@ route.get("/hug/images", password, (req, res) => {
   return res.json(randomGif);
 });
 
-app.use((req, res, next) => {
-  res.status(404).json({ error: "Ops, link inválido, tente novamente." });
-});
-
 app.use(route);
 
 app.listen(PORT, () => {
