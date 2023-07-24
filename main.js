@@ -9,7 +9,7 @@ app.get("/kiss/images", authMiddleware, (req, res) => {
 
   let randomGif = kissJSON[Math.floor(Math.random() * kissJSON.length)];
 
-  res.json(randomGif);
+  return res.json(randomGif);
 });
 
 app.get("/hug/images", authMiddleware, (req, res) => {
@@ -17,7 +17,7 @@ app.get("/hug/images", authMiddleware, (req, res) => {
 
   let randomGif = hugJSON[Math.floor(Math.random() * hugJSON.length)];
 
-  res.json(randomGif);
+  return res.json(randomGif);
 });
 
 app.listen(PORT, () => {

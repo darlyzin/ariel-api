@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "https://arielapi.vercel.app/kiss/images"
+      "dest": "main.js"
     }
   ]
 }
