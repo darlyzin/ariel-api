@@ -6,21 +6,8 @@ const app = express();
 
 const route = Router();
 const PORT = 4000;
-const PASSWORD = "ariel?=api";
 
-const password = (req, res, next) => {
-  const { password } = req.query;
-
-  if (!password || password !== PASSWORD) {
-    return res
-      .status(401)
-      .json({ error: "Ops, senha inválida, tente novamente..." });
-  }
-
-  next();
-};
-
-route.get("/kiss/images", password, (req, res) => {
+route.get("/kiss/images", (req, res) => {
   const { kissJSON } = JSON.parse(
     fs.readFileSync("./service/images.json", "utf8")
   );
@@ -30,7 +17,7 @@ route.get("/kiss/images", password, (req, res) => {
   return res.json(randomGif);
 });
 
-route.get("/hug/images", password, (req, res) => {
+route.get("/hug/images", (req, res) => {
   const { hugJSON } = JSON.parse(
     fs.readFileSync("./service/images.json", "utf8")
   );
