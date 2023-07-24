@@ -21,7 +21,7 @@ npm install
 node .
 ```
 
-E entrar no site que o terminal irá lhe dar (http://localhost:{port}/) assim coloque no navegador "http://localhost:3000/kiss/images?credential=arielapi", obeservação, você terá que hospedar para poder ter um dominio personalizado para poder utilizar em seu bot.
+E entrar no site que o terminal irá lhe dar (http://localhost:{port}/) assim coloque no navegador "http://localhost:3000/kiss/images/", obeservação, você terá que hospedar para poder ter um dominio personalizado para poder utilizar em seu bot. veja como funciona em https://arielapi.onrender.com/kiss/images
 
 ## Contribuindo
 
