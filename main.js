@@ -1,28 +1,20 @@
-const express = require("express");
-const fs = require("fs");
+import express from "express";
+import fs from "fs";
 
 const app = express();
 const PORT = 3000;
 
-const authMiddleware = (req, res, next) => {
-  const credential = req.query.credential;
-
-  if (credential === "arielapi") {
-    return next();
-  }
-
-  res.status(401).send("Ops... você não tem acesso.");
-};
-
 app.get("/kiss/images", authMiddleware, (req, res) => {
-  const { kissJSON } = require("./service/images.json");
+  const { kissJSON } = JSON.parse(fs.readFileSync("./service/images.json", "utf8"));
+
   let randomGif = kissJSON[Math.floor(Math.random() * kissJSON.length)];
 
   res.json(randomGif);
 });
 
 app.get("/hug/images", authMiddleware, (req, res) => {
-  const { hugJSON } = require("./service/images.json");
+  const { hugJSON } = JSON.parse(fs.readFileSync("./service/images.json", "utf8"));
+
   let randomGif = hugJSON[Math.floor(Math.random() * hugJSON.length)];
 
   res.json(randomGif);

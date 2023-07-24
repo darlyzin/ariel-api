@@ -1,0 +1,15 @@
+{
+  "name": "arielapi",
+  "version": 2,
+  "public": true,
+  "build": {
+    "src": "main.js",
+    "use": "@vercel/node"
+  },
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "https://arielapi.vercel.app/kiss/images"
+    }
+  ]
+}
