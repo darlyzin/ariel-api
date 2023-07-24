@@ -21,6 +21,13 @@ app.get("/kiss/images", authMiddleware, (req, res) => {
   res.json(randomGif);
 });
 
+app.get("/hug/images", authMiddleware, (req, res) => {
+  const { hugJSON } = require("./service/images.json");
+  let randomGif = hugJSON[Math.floor(Math.random() * hugJSON.length)];
+
+  res.json(randomGif);
+});
+
 app.listen(PORT, () => {
   console.log(`API de memes rodando em http://localhost:${PORT}`);
 });
